@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Granesta';
+    src: url("./fonts/granesta/Granesta.otf") format('woff');
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    grid-template-areas:
+    "logo-sidebar intro"
+    "logo-sidebar form-container"
+    "logo-sidebar login";
+}
+
+.logo-sidebar h1 {
+    color: white;
+    font-size: 2.5em;
+    font-family: 'Granesta', sans-serif;
+    opacity: 100%;
+}
+
+
+
+.logo-sidebar {
+    grid-area: logo-sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    z-index: 1;
+    background-image:  url(./images/matt-howard-pCoXyXyroCk-unsplash.jpg);
+}
+
+.logo-sidebar-image-credit {
+    z-index: 0;
+    color: #DDD;
+    font-size: 1em;
+    text-align: center;
+    padding: 2em;
+}
+
+.logo-sidebar-image-credit a {
+    color: #BBB;
+}
+
+.logo-bar {
+    position: relative;
+    top: 100px;
+    padding: 1.5em;
+    bottom: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.logo-img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #EEE;
+    padding: 3em 5em 3em 3em;
+}
+
+.intro h2 {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.intro h2:last-child {
+    margin-top: 1em;
+}
+
+.form-container {
+    grid-area: form-container;
+    z-index: 0;
+    padding: 3em 5em 3em 3em;
+    background-color: #FFF;
+    box-shadow: 0em 0.25em 0.25em 0.25em #DDD;
+}
+
+.form-signup {
+    max-width: 60%;
+}
+
+.form-signup ul {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+}
+
+label {
+    display: block;
+    font-size: 1em;
+    padding-left: 0.25em;
+}
+
+input {
+    padding: 0.5em;
+    margin-top: 0.25em;
+    min-width: 15em;
+}
+
+input:focus {
+    background-color: rgb(213, 234, 241);
+}
+
+.form-signup li {
+    list-style: none;
+}
+
+.login {
+    grid-area: login;
+    background-color: #EEE;
+    padding: 3em 5em 3em 3em;
+}
+
+.login h3 {
+    font-size: 1.25em;
+}
+
+.login h3 a {
+    text-decoration: none;
+    color: teal;
+}
+
+.login h3 a:hover {
+    color: blue;
+}
+
+.form-signup button {
+    padding: 1em;
+    margin-top: 1.5em;
+    color: #EEE;
+    font-size: 1em;
+    background-color: teal;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.1sem #DDD;
+}
+
+.form-signup button:hover {
+    background-color: blue;
+}
