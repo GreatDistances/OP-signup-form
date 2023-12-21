@@ -29,8 +29,8 @@
         <li>
         <label for="name-last">LAST NAME *</label><input name="name-last" id="name-last" type="text" minlength="1" maxlength="25" required></li>
         <li><label for="email">E-MAIL *</label><input name="email" id="email" type="email" required></li>
-        <li><label for="phone">PHONE NUMBER *<span id="form-req-tel" class="form-req hidden">Digits only!</span></label><input name="phone" id="phone" type="tel" pattern="^[0-9]*$" maxlength="16">
-            
+        <li><label for="phone">TEL NUMBER *</label><input name="phone" id="phone" type="tel" pattern="^[0-9]*$" maxlength="16">
+            <p id="form-req-tel" class="form-req hidden">Digits only please!</span>
         </li>
         <li><label for="password">PASSWORD *</label><input name="password" id="password" type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
             <p id="form-req-password" class="form-req">Min. 8 characters, including upper case, lower case, & number or special character</p>

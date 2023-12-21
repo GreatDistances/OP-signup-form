@@ -169,8 +169,8 @@ main {
 
 .form-signup ul {
     display: grid;
-    gap: 1em;
-    grid-template-columns: 1fr 1fr;
+    grid-template: 0.75fr 0.75fr 0.75fr / 1fr 1fr;
+    align-items: start;
 }
 
 input:focus {
