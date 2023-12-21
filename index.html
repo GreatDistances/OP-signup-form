@@ -14,28 +14,41 @@
     </div>
     <div class="intro">
         <h2>This is a sample signup form!  Consider signing up because you have nothing better to do.
-        Enter your personal information <em>now</em> and become the best possible version of yourself!
+        This is an example of layouts using CSS Grid, Flexbox, and form validation via HTML and Javascript.  If you enter your data, it doesn't go anywhere.
         </h2>
     <h2>
-        Let's get into it <em>right this second!</em>
+        Enter your personal information <em>now</em> for no particular reason!
     </h2>
     </div>
     <div class="form-container">
-    <form class="form-signup">
+    <form class="form-signup" id="form-signup" method="POST" action="" onsubmit="submitForm(event)">
+        <legend class="form-legend">Account Setup Details</legend>
         <ul>
             <li>
-        <label for="name-first">FIRST NAME</label><input name="name-first" type="text"></li>
+        <label for="name-first">FIRST NAME *</label><input name="name-first" type="text" minlength="1" maxlength="25" required autofocus></li>
         <li>
-        <label for="name-last">LAST NAME</label><input name="name-last" id="name-last" type="text"></li>
-        <li><label for="email">E-MAIL</label><input name="email" id="email" type="email"></li>
-        <li><label for="phone">PHONE NUMBER</label><input name="phone" id="phone" type="tel"></li>
-        <li><label for="password">PASSWORD</label><input name="password" id="password" type="password"></li>
-        <li><label for="password-conf">CONFIRM PASSWORD</label><input name="password-conf" id="password-conf" type="password"></li>
+        <label for="name-last">LAST NAME *</label><input name="name-last" id="name-last" type="text" minlength="1" maxlength="25" required></li>
+        <li><label for="email">E-MAIL *</label><input name="email" id="email" type="email" required></li>
+        <li><label for="phone">PHONE NUMBER *<span id="form-req-tel" class="form-req hidden">Digits only!</span></label><input name="phone" id="phone" type="tel" pattern="^[0-9]*$" maxlength="16">
+            
+        </li>
+        <li><label for="password">PASSWORD *</label><input name="password" id="password" type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            <p id="form-req-password" class="form-req">Min. 8 characters, including upper case, lower case, & number or special character</p>
+        </li>
+        <li><label for="password-conf">CONFIRM PASSWORD *</label><input name="password-conf" id="password-conf" type="password" required>
+            <p class="hidden form-req red" id="match">Passwords do not match!</p>
+        </li>
     </ul>
         <button type="submit">Create Account</button>
     </form>
 </div>
-    <div class="login"><h3>Already have an account? <a href="https://google.com">Log in</a></div>
+    <div class="login">
+        <h3>Already have an account? <a href="https://github.com/GreatDistances" target="_blank">Log in</a></h3>
+        <div class="credit">
+        <a href="https://github.com/GreatDistances/OP-signup-form">© 2023 Matthew P. Wicks&nbsp;
+    <img src="images/github-mark.svg" class="logo-github"></a>
+    </div>
     </main>
 </body>
+<script src="scripts.js"></script>
 </html>

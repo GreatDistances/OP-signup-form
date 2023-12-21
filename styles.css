@@ -12,21 +12,12 @@
 
 main {
     display: grid;
-    grid-template-columns: 3fr 5fr;
+    grid-template-columns: 3fr 7fr;
     grid-template-areas:
     "logo-sidebar intro"
     "logo-sidebar form-container"
-    "logo-sidebar login";
+    "logo-sidebar login"
 }
-
-.logo-sidebar h1 {
-    color: white;
-    font-size: 2.5em;
-    font-family: 'Granesta', sans-serif;
-    opacity: 100%;
-}
-
-
 
 .logo-sidebar {
     grid-area: logo-sidebar;
@@ -36,35 +27,44 @@ main {
     min-height: 100vh;
     z-index: 1;
     background-image:  url(./images/matt-howard-pCoXyXyroCk-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logo-bar {
+    position: relative;
+    top: 100px;
+    padding: 1em;
+    bottom: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.logo-img {
+    width: min(20vw, 125px);
+    border-radius: 50%;
+}
+
+.logo-sidebar h1 {
+    color: white;
+    font-size: min(5vw, 2.5em);
+    font-family: 'Granesta', sans-serif;
 }
 
 .logo-sidebar-image-credit {
     z-index: 0;
     color: #DDD;
-    font-size: 1em;
+    font-size: 0.9em;
     text-align: center;
     padding: 2em;
 }
 
 .logo-sidebar-image-credit a {
     color: #BBB;
-}
-
-.logo-bar {
-    position: relative;
-    top: 100px;
-    padding: 1.5em;
-    bottom: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5)
-}
-
-.logo-img {
-    width: 150px;
-    border-radius: 50%;
 }
 
 .intro {
@@ -74,11 +74,81 @@ main {
     justify-content: flex-end;
     background-color: #EEE;
     padding: 3em 5em 3em 3em;
+    color: #333;
 }
 
-.intro h2 {
-    font-weight: 700;
-    font-size: 1.5em;
+@media (max-width: 800px) {
+    .intro h2 {
+        width: 100%;
+        font-weight: 700;
+        font-size: 1em;
+    }
+    .login h3 {
+        font-size: 1em;
+        color: #333;
+    }
+    .form-legend {
+        font-size: 1em;
+        font-weight: bold;
+        padding-bottom: 1em;
+        color: #333;
+    }
+    label {
+        display: block;
+        font-size: 0.75em;
+        padding-left: 0.25em;
+        color: #333;
+    }
+    input {
+        padding: 0.5em;
+        margin-top: 0.25em;
+        width: 12em;
+        border: #E5E7EB solid;
+        border-radius: 3px;
+    }
+    .credit {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2em;
+    }
+}
+@media (min-width: 801px) {
+    .intro h2 {
+        width: 80%;
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    .login h3 {
+        font-size: 1.25em;
+        color: #333;
+    }
+    .form-legend {
+        font-size: 1.25em;
+        font-weight: bold;
+        padding-bottom: 1em;
+        color: #333;
+    }
+    label {
+        display: block;
+        font-size: 1em;
+        padding-left: 0.25em;
+        color: #333;
+    }
+    input {
+        padding: 0.5em;
+        margin-top: 0.25em;
+        width: 18em;
+        border: #E5E7EB solid;
+        border-radius: 3px;
+    }
+    .credit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2em;
+    }
+
 }
 
 .intro h2:last-child {
@@ -88,13 +158,13 @@ main {
 .form-container {
     grid-area: form-container;
     z-index: 0;
-    padding: 3em 5em 3em 3em;
+    padding: 3em 5em 2em 3em;
     background-color: #FFF;
     box-shadow: 0em 0.25em 0.25em 0.25em #DDD;
 }
 
 .form-signup {
-    max-width: 60%;
+    max-width: 50%;
 }
 
 .form-signup ul {
@@ -103,34 +173,35 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-label {
-    display: block;
-    font-size: 1em;
-    padding-left: 0.25em;
-}
-
-input {
-    padding: 0.5em;
-    margin-top: 0.25em;
-    min-width: 15em;
-}
-
 input:focus {
-    background-color: rgb(213, 234, 241);
+    border: 1px solid blue;
+    box-shadow: 5px 5px 5px 0px #CCC;
 }
 
 .form-signup li {
     list-style: none;
 }
 
-.login {
-    grid-area: login;
-    background-color: #EEE;
-    padding: 3em 5em 3em 3em;
+.form-req {
+    font-size: 0.8em; max-width: 15em; padding: 0.5em 0.25em;
+    color: #333;
 }
 
-.login h3 {
-    font-size: 1.25em;
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.login {
+    grid-area: login;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #EEE;
+    padding: 3em 2em 2em 3em;
 }
 
 .login h3 a {
@@ -155,4 +226,27 @@ input:focus {
 
 .form-signup button:hover {
     background-color: blue;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.error-password-conf {
+    color: red;
+    font-size: 1em;
+    padding: 0.5em 0.25em;
+}
+
+.credit a {
+    color: teal;
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 0em;
+    display: flex;
+    align-items: center;
+}
+
+.logo-github {
+    width: 1.25em;
 }
