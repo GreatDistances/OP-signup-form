@@ -169,6 +169,7 @@ main {
 
 .form-signup ul {
     display: grid;
+    gap: 1em;
     grid-template: 0.75fr 0.75fr 0.75fr / 1fr 1fr;
     align-items: start;
 }
